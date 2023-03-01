@@ -13,12 +13,12 @@ public class BuscarCervejaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_cerveja);
-        Button button = findViewById(R.id.backButton);
+        Button backButton = findViewById(R.id.backButton);
         String username = getIntent().getStringExtra("userName");
         String greetingsMsg = String.format("Olá, %s, seja bem vindo!", username);
         TextView greetingsText = findViewById(R.id.greetingsText);
         greetingsText.setText(greetingsMsg);
-        button.setOnClickListener(view -> {
+        backButton.setOnClickListener(view -> {
             Intent intent = new Intent(BuscarCervejaActivity.this, MainActivity.class);
             startActivity(intent);
         });
