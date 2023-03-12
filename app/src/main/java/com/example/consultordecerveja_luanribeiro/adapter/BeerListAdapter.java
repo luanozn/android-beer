@@ -16,8 +16,8 @@ import java.util.List;
 public class BeerListAdapter extends BaseAdapter {
 
     private final List<Beer> beerList;
-    private LayoutInflater inflater;
-    private Context context;
+    private final LayoutInflater inflater;
+    private final Context context;
 
    public BeerListAdapter(Context context, List<Beer> beerList){
        this.beerList = beerList;
@@ -54,4 +54,8 @@ public class BeerListAdapter extends BaseAdapter {
 
         return convertView;
    }
+
+    public Context getContext() {
+        return context;
+    }
 }
