@@ -9,6 +9,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.consultordecerveja_luanribeiro.entities.Beer;
+import com.example.consultordecerveja_luanribeiro.enums.BeerType;
+
+import java.util.List;
+import java.util.Map;
+
 public class BuscarCervejaActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +24,7 @@ public class BuscarCervejaActivity extends AppCompatActivity {
 
         Button backButton = findViewById(R.id.backButton);
         String username = getIntent().getStringExtra("userName");
-        String greetingsMsg = String.format("Olá, %s, seja bem vindo!", username);
+        String greetingsMsg = String.format("Olá %s, seja bem vindo!", username);
         TextView greetingsText = findViewById(R.id.greetingsText);
 
         greetingsText.setText(greetingsMsg);
@@ -33,6 +39,10 @@ public class BuscarCervejaActivity extends AppCompatActivity {
             Intent intent = new Intent(BuscarCervejaActivity.this, MainActivity.class);
             startActivity(intent);
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }
