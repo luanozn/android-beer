@@ -12,7 +12,10 @@
         android:theme="@style/Theme.ConsultorDeCervejaLuanRibeiro"
         tools:targetApi="31">
         <activity
-            android:name=".activity_beer_list"
+            android:name=".BeerDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityBeerList"
             android:exported="false" />
         <activity
             android:name=".BuscarCervejaActivity"

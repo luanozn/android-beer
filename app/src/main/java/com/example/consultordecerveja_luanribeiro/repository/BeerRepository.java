@@ -20,27 +20,27 @@ public class BeerRepository {
         Map<BeerType, List<Beer>> allBeerTypes = new HashMap<>();
 
         List<Beer> lagerBeers = Arrays.asList(
-                new Beer(LAGER, "Heineken", "Heineken International", R.drawable.heineken),
-                new Beer(LAGER, "Stella Artois", "AB InBev", R.drawable.stella),
-                new Beer(LAGER, "Corona Extra", "AB InBev", R.drawable.corona)
+                new Beer(LAGER, "Heineken", "Heineken International", R.drawable.heineken, 8.99, "Holanda", 1863),
+                new Beer(LAGER, "Stella Artois", "AB InBev", R.drawable.stella, 5.99, "Bélgica",1366),
+                new Beer(LAGER, "Corona Extra", "AB InBev", R.drawable.corona, 7.99, "México", 1949)
         );
 
         List<Beer> pilsenBeers = Arrays.asList(
-                new Beer(PILSEN, "Eisenbahn", "Brasil Kirin", R.drawable.eisenbahn),
-                new Beer(PILSEN, "Skol", "Carlsberg", R.drawable.skol),
-                new Beer(PILSEN, "Bavaria", "AMBEV", R.drawable.bavaria)
+                new Beer(PILSEN, "Eisenbahn", "Brasil Kirin", R.drawable.eisenbahn, 6.99, "Brasil", 2002),
+                new Beer(PILSEN, "Skol", "Carlsberg", R.drawable.skol, 3.99, "Brasil", 1967),
+                new Beer(PILSEN, "Bavaria", "AMBEV", R.drawable.bavaria, 2.50, "Brasil", 2000)
                 );
 
         List<Beer> aleBeers = Arrays.asList(
-                new Beer(ALE, "BrewDog Punk IPA", "BrewDog", R.drawable.brewdog),
-                new Beer(ALE, "Leuven Golden Ale King", "Leuven", R.drawable.leuven),
-                new Beer(ALE, "Baden Baden Golden Ale", "Baden Baden", R.drawable.baden)
+                new Beer(ALE, "BrewDog Punk IPA", "BrewDog", R.drawable.brewdog, 13.50, "Escócia", 2007),
+                new Beer(ALE, "Leuven Golden Ale King", "Leuven", R.drawable.leuven, 15.50, "Brasil", 2010),
+                new Beer(ALE, "Baden Baden Golden Ale", "Baden Baden", R.drawable.baden, 16.50, "Brasil", 1999)
         );
 
         List<Beer> lambicBeers = Arrays.asList(
-                new Beer(LAMBIC, "Oud Beersel Framboise", "Oud Beersel", R.drawable.framboise),
-                new Beer(LAMBIC, "Oud Beersel Oude Kriek Vieille", "Oud Beersel", R.drawable.vieille),
-                new Beer(LAMBIC, "Oud Beersel Geuze Oude Pijpen", "Oud Beersel", R.drawable.pijpen)
+                new Beer(LAMBIC, "Oud Beersel Framboise", "Oud Beersel", R.drawable.framboise, 180.50, "Beersel", 1882),
+                new Beer(LAMBIC, "Oud Beersel Oude Kriek Vieille", "Oud Beersel", R.drawable.vieille, 255.0, "Beersel", 1882),
+                new Beer(LAMBIC, "Oud Beersel Geuze Oude Pijpen", "Oud Beersel", R.drawable.pijpen, 220.50, "Beersel", 1882)
         );
 
         allBeerTypes.put(LAGER, lagerBeers);
