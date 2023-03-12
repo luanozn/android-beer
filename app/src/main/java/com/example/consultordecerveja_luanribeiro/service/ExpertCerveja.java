@@ -6,11 +6,11 @@ import com.example.consultordecerveja_luanribeiro.repository.BeerRepository;
 
 import java.util.List;
 
-public class BeerService {
+public class ExpertCerveja {
 
     private final BeerRepository repository;
 
-    public BeerService(BeerRepository repository) {
+    public ExpertCerveja(BeerRepository repository) {
         this.repository = repository;
     }
 

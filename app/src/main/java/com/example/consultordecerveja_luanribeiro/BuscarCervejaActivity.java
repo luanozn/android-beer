@@ -16,13 +16,14 @@ import com.example.consultordecerveja_luanribeiro.adapter.BeerListAdapter;
 import com.example.consultordecerveja_luanribeiro.entities.Beer;
 import com.example.consultordecerveja_luanribeiro.enums.BeerType;
 import com.example.consultordecerveja_luanribeiro.repository.BeerRepository;
-import com.example.consultordecerveja_luanribeiro.service.BeerService;
+import com.example.consultordecerveja_luanribeiro.service.ExpertCerveja;
 
 import java.util.List;
 import java.util.Locale;
 
 public class BuscarCervejaActivity extends AppCompatActivity {
 
+    private String lastItemWithSearchPressed = "";
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putString("userName", getIntent().getStringExtra("userName"));
@@ -72,8 +73,9 @@ public class BuscarCervejaActivity extends AppCompatActivity {
             Spinner spinner = findViewById(R.id.spinner);
             String selectedItem = spinner.getSelectedItem().toString();
 
-            BeerService service = new BeerService(new BeerRepository());
+            ExpertCerveja service = new ExpertCerveja(new BeerRepository());
             List<Beer> beerList = service.getByType(BeerType.from(selectedItem));
+            lastItemWithSearchPressed = selectedItem;
 
 
             BeerListAdapter beerAdapter = new BeerListAdapter(getApplicationContext(), beerList);
@@ -84,11 +86,9 @@ public class BuscarCervejaActivity extends AppCompatActivity {
         beerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Spinner spinner = findViewById(R.id.spinner);
-                String selectedItem = spinner.getSelectedItem().toString();
 
-                BeerService service = new BeerService(new BeerRepository());
-                List<Beer> beerList = service.getByType(BeerType.from(selectedItem));
+                ExpertCerveja service = new ExpertCerveja(new BeerRepository());
+                List<Beer> beerList = service.getByType(BeerType.from(lastItemWithSearchPressed));
                 Beer intentVariable = beerList.get(position);
 
                 Intent intent = new Intent(BuscarCervejaActivity.this, BeerDetails.class);
