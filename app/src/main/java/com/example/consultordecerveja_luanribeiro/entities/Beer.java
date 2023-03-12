@@ -7,13 +7,13 @@ public class Beer {
     private final BeerType type;
     private final String name;
     private final String brand;
-    private final String pictureUrl;
+    private final int picture;
 
-    public Beer(BeerType type, String name, String brand, String pictureUrl) {
+    public Beer(BeerType type, String name, String brand, int pictureUrl) {
         this.type = type;
         this.name = name;
         this.brand = brand;
-        this.pictureUrl = pictureUrl;
+        this.picture = pictureUrl;
     }
 
     public BeerType getType() {
@@ -28,7 +28,7 @@ public class Beer {
         return brand;
     }
 
-    public String getPictureUrl() {
-        return pictureUrl;
+    public int getPicture() {
+        return picture;
     }
 }

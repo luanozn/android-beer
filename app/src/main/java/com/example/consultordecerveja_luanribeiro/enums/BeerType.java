@@ -5,5 +5,23 @@ public enum BeerType {
     LAGER,
     PILSEN,
     ALE,
-    LAMBIC
+    LAMBIC,
+    UNDEFINED;
+
+    public static BeerType from(String typeString) {
+
+        switch (typeString) {
+            case "Lager":
+                return LAGER;
+            case "Pilsen":
+                return PILSEN;
+            case "Ale":
+                return ALE;
+            case "Lambic":
+                return LAMBIC;
+            default:
+                return UNDEFINED;
+        }
+
+    }
 }
